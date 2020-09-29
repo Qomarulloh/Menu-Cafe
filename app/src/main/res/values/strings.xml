@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Cafe</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="jam">Jam</string>
+    <string name="nama_menu">Nama Menu</string>
+    <string name="enter_jumlah_order">Enter Jumlah Order</string>
+    <string name="harga">Harga</string>
+    <string name="save_order">Save Order</string>
+    <string name="order_lagi">Order Lagi</string>
 </resources>

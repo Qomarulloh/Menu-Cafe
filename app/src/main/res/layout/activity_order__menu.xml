@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:text="@string/tanggal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,7 +20,7 @@
         android:id="@+id/text_jam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/jam"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_tanggal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_tanggal" />
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="@string/nama_menu"
         app:layout_constraintStart_toStartOf="@+id/text_tanggal"
         app:layout_constraintTop_toBottomOf="@+id/text_tanggal" />
 
@@ -38,19 +38,20 @@
         android:id="@+id/et_jumlahOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
-        android:hint="Enter Jumlah Order"
+        android:hint="@string/enter_jumlah_order"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_namaMenu" />
 
     <TextView
-        android:id="@+id/text_harga"
+        android:id="@+id/text_hargaV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/harga"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_namaMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_namaMenu" />
@@ -60,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Save Order"
+        android:text="@string/save_order"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Order Lagi"
+        android:text="@string/order_lagi"
         app:layout_constraintEnd_toEndOf="@+id/btn_saveOrder"
         app:layout_constraintStart_toStartOf="@+id/btn_saveOrder"
         app:layout_constraintTop_toBottomOf="@+id/btn_saveOrder" />

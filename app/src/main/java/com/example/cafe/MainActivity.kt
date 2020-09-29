@@ -1,15 +1,21 @@
 package com.example.cafe
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ListView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    companion object{
+        lateinit var dbHandler: Order_Menu_DBHandler
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        dbHandler = Order_Menu_DBHandler(this, null, null, 1)
 
         val menuCafe = ArrayList<Menu_Cafe_Model>()
         menuCafe.add(
@@ -104,5 +110,21 @@ class MainActivity : AppCompatActivity() {
         object_adapter = Menu_Cafe_Adapter(applicationContext, menuCafe)
         val menu = findViewById<ListView>(R.id.list_menu_cafe)
         menu.adapter = object_adapter
+
+        list_menu_cafe.setOnItemClickListener()
+        {
+            adapterView, view, position, id ->
+            val itemAtPos = adapterView.getItemAtPosition(position)
+            val itemIdAtPos = adapterView.getItemIdAtPosition(position)
+
+            val intent = Intent(applicationContext, Order_Menu::class.java)
+            intent.putExtra("nama_menu", menuCafe[position].str_nama.toString())
+            intent.putExtra("harga_menu", menuCafe[position].int_harga.toString())
+            startActivity(intent)
+        }
+
+        fabtogle.setOnClickListener{
+            startActivity(Intent(this, View_Order::class.java))
+        }
     }
 }

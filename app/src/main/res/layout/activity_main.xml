@@ -8,9 +8,25 @@
 
     <ListView
         android:id="@+id/list_menu_cafe"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
         tools:ignore="MissingConstraints" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabtogle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="15dp"
+            app:backgroundTint="@color/colorPrimaryDark"
+            android:src="@drawable/ic_baseline_local_grocery_store_24">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
