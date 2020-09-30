@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
-import android.widget.TableRow
 import android.widget.TextView
 
 class Menu_Cafe_Adapter(context: Context, DaftarMenu: ArrayList<Menu_Cafe_Model>) :BaseAdapter() {

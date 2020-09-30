@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import java.lang.Exception
@@ -83,5 +84,19 @@ class Order_Menu_DBHandler(context: Context, name:String?, factory: SQLiteDataba
         cursor.close()
         db.close()
         return rec_order
+    }
+
+    fun deleteOrder(OrderID: Int): Boolean{
+        val query = "Delete from $TABLE_NAME where ${colId} = $OrderID"
+        val db = this.writableDatabase
+        var result : Boolean = false
+        try {
+            val cursor = db.execSQL(query)
+            result = true
+        } catch (e: Exception){
+            Log.e(ContentValues.TAG, "Terjadi kesalahan penghapusan")
+        }
+        db.close()
+        return result
     }
 }
