@@ -23,13 +23,15 @@
         android:text="@string/jam"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_tanggal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.789"
         app:layout_constraintStart_toEndOf="@+id/text_tanggal" />
 
     <TextView
         android:id="@+id/text_namaMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="48dp"
         android:text="@string/nama_menu"
         app:layout_constraintStart_toStartOf="@+id/text_tanggal"
         app:layout_constraintTop_toBottomOf="@+id/text_tanggal" />
@@ -45,7 +47,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_namaMenu" />
+        app:layout_constraintTop_toBottomOf="@+id/image_menu" />
+
+    <Button
+        android:id="@+id/btn_orderLagi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/order_lagi"
+        app:layout_constraintEnd_toEndOf="@+id/btn_saveOrder"
+        app:layout_constraintStart_toStartOf="@+id/btn_saveOrder"
+        app:layout_constraintTop_toBottomOf="@+id/btn_saveOrder" />
+
+    <Button
+        android:id="@+id/btn_saveOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/save_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_jumlahOrder" />
 
     <TextView
         android:id="@+id/text_hargaV"
@@ -54,26 +77,16 @@
         android:text="@string/harga"
         app:layout_constraintBaseline_toBaselineOf="@+id/text_namaMenu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toEndOf="@+id/text_namaMenu" />
 
-    <Button
-        android:id="@+id/btn_saveOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/image_menu"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="36dp"
-        android:text="@string/save_order"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_jumlahOrder" />
-
-    <Button
-        android:id="@+id/btn_orderLagi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="@string/order_lagi"
-        app:layout_constraintEnd_toEndOf="@+id/btn_saveOrder"
-        app:layout_constraintStart_toStartOf="@+id/btn_saveOrder"
-        app:layout_constraintTop_toBottomOf="@+id/btn_saveOrder" />
+        app:layout_constraintTop_toBottomOf="@+id/text_namaMenu"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

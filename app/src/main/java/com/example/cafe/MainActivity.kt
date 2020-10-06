@@ -118,8 +118,9 @@ class MainActivity : AppCompatActivity() {
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)
 
             val intent = Intent(applicationContext, Order_Menu::class.java)
-            intent.putExtra("nama_menu", menuCafe[position].str_nama.toString())
+            intent.putExtra("nama_menu", menuCafe[position].str_nama)
             intent.putExtra("harga_menu", menuCafe[position].int_harga.toString())
+            intent.putExtra("image_menu", menuCafe[position].int_image.toString())
             startActivity(intent)
         }
 
