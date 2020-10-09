@@ -11,13 +11,14 @@ import java.lang.Exception
 
 class Order_Menu_DBHandler(context: Context, name:String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
     companion object{
-        private val DATABASE_NAME = "Cafegaul.db"
+        private val DATABASE_NAME = "CafeQomar.db"
         private val DATABASE_VERSION = 1
 
         val TABLE_NAME = "tblOrderMenu"
         private val colId = "Id"
         private val colTgl = "Tanggal"
         private val colJam = "Jam"
+        private val colNoMeja = "NoMeja"
         private val colNamaMenu = "NamaMenu"
         private val colJmlOrder = "JmlOrder"
         private val colHargaMenu = "HargaMenu"
@@ -28,6 +29,7 @@ class Order_Menu_DBHandler(context: Context, name:String?, factory: SQLiteDataba
                 "$colId INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "$colTgl TEXT," +
                 "$colJam TEXT," +
+                "$colNoMeja INTEGER," +
                 "$colNamaMenu TEXT," +
                 "$colJmlOrder INTEGER," +
                 "$colHargaMenu INTEGER)")
@@ -42,6 +44,7 @@ class Order_Menu_DBHandler(context: Context, name:String?, factory: SQLiteDataba
         val Data_Values = ContentValues()
         Data_Values.put(colTgl, OrderModel.str_Tgl)
         Data_Values.put(colJam, OrderModel.str_Jam)
+        Data_Values.put(colNoMeja, OrderModel.int_noMeja)
         Data_Values.put(colNamaMenu, OrderModel.str_nmMenu)
         Data_Values.put(colJmlOrder, OrderModel.int_jmlOrder)
         Data_Values.put(colHargaMenu, OrderModel.int_hrgMenu)
@@ -59,7 +62,7 @@ class Order_Menu_DBHandler(context: Context, name:String?, factory: SQLiteDataba
     }
 
     fun getAllOrder(mCtx: Context): ArrayList<Order_Menu_Model>{
-        val query = "Select * from $TABLE_NAME"
+        val query = "Select * from $TABLE_NAME ORDER BY $colNoMeja ASC"
         val db = this.readableDatabase
         val cursor = db.rawQuery(query, null)
         val rec_order = ArrayList<Order_Menu_Model>()
@@ -72,6 +75,7 @@ class Order_Menu_DBHandler(context: Context, name:String?, factory: SQLiteDataba
                 Order.str_id = cursor.getInt(cursor.getColumnIndex(colId))
                 Order.str_Tgl = cursor.getString(cursor.getColumnIndex(colTgl))
                 Order.str_Jam = cursor.getString(cursor.getColumnIndex(colJam))
+                Order.int_noMeja = cursor.getInt(cursor.getColumnIndex(colNoMeja))
                 Order.str_nmMenu = cursor.getString(cursor.getColumnIndex(colNamaMenu))
                 Order.int_jmlOrder = cursor.getInt(cursor.getColumnIndex(colJmlOrder))
                 Order.int_hrgMenu = cursor.getInt(cursor.getColumnIndex(colHargaMenu))

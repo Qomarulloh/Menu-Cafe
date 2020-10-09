@@ -14,6 +14,7 @@ class View_Order_Adapter(mCtx: Context, val ViewOrder: ArrayList<Order_Menu_Mode
 
     val mCtx = mCtx
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        val noMeja = itemView.tv_noMeja
         val Nmenu = itemView.text_namaV
         val Harga = itemView.text_hargaV
         val jmlOrder = itemView.text_jmlOrderV
@@ -29,6 +30,7 @@ class View_Order_Adapter(mCtx: Context, val ViewOrder: ArrayList<Order_Menu_Mode
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val Orderan = ViewOrder[p1]
+        p0.noMeja.text = Orderan.int_noMeja.toString()
         p0.Nmenu.text = Orderan.str_nmMenu
         p0.Harga.text = Orderan.int_hrgMenu.toString()
         p0.jmlOrder.text = Orderan.int_jmlOrder.toString()

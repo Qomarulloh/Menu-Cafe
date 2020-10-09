@@ -37,7 +37,7 @@ class Order_Menu : AppCompatActivity() {
         }
 
         text_namaMenu.text = receivedName
-        text_hargaV.text = "Rp. $receivedHarga"
+        text_hargaV.text = receivedHarga
 
         btn_saveOrder.setOnClickListener {
             if (et_jumlahOrder.text.isEmpty()){
@@ -46,6 +46,7 @@ class Order_Menu : AppCompatActivity() {
                 val Order_Model = Order_Menu_Model()
                 Order_Model.str_Tgl         = text_tanggal.text.toString()
                 Order_Model.str_Jam         = text_jam.text.toString()
+                Order_Model.int_noMeja      = et_noMeja.text.toString().toInt()
                 Order_Model.str_nmMenu      = text_namaMenu.text.toString()
                 Order_Model.int_jmlOrder    = et_jumlahOrder.text.toString().toInt()
                 Order_Model.int_hrgMenu     = text_hargaV.text.toString().toInt()
